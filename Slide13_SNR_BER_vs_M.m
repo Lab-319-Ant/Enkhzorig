@@ -1,5 +1,5 @@
 %% ============================================================
-%  СЛАЙД 13 — SNR/BER vs M (Блокаж сценари)
+%   SNR/BER vs M 
 %  "gNB-UE шууд зам барилгаар хаагдсан (h_d≈0)"
 %  MATLAB R2024b | 5G Toolbox v2.8 | Comm Toolbox v15.3
 % ============================================================
@@ -52,13 +52,13 @@ target_snr = [8.4, 14.8, 24.1];
 offset = target_snr(1) - snr_db_table(1);
 snr_db_table = snr_db_table + offset;
 
-% RIS-гүй (блокаж)
+% RIS-гүй 
 SNR_noRIS_dB = -21.5;
 
 fprintf('=== Слайд 13: SNR/BER vs M ===\n');
 fprintf('%-22s %10s %12s %12s\n', 'Систем', 'SNR(дБ)', 'BER', 'Үр дүн');
 fprintf('%s\n', repmat('-', 58, 1));
-fprintf('%-22s %+10.1f %12.1e %12s\n', 'RIS-гүй (блокаж)', SNR_noRIS_dB, 0.5, 'Холбоо ✕');
+fprintf('%-22s %+10.1f %12.1e %12s\n', 'RIS-гүй', SNR_noRIS_dB, 0.5, 'Холбоо ✕');
 ber_vals = [1.2e-3, 8.3e-5, 2.1e-6];
 labels_r = {'Сайн ✓', '5G eMBB ✓', 'URLLC ✓'};
 for i = 1:3
@@ -145,7 +145,7 @@ ylim([-5 30]); grid on; box on;
 % ── Дэд2: BER vs SNR ─────────────────────────────────────────
 ax2 = subplot(1,2,2);
 cols_ber = {[0.6 0.6 0.6], [0.85 0.25 0.1], [0.2 0.55 0.85], [0.15 0.65 0.3]};
-lbls = {'RIS-гүй (блокаж)','RIS M=128','RIS M=256','RIS M=1024'};
+lbls = {'RIS-гүй','RIS M=128','RIS M=256','RIS M=1024'};
 
 semilogy(SNR_range_dB, max(BER_noRIS,1e-7), '-',  'Color',cols_ber{1},'LineWidth',2.0,'DisplayName',lbls{1}); hold on;
 for mi = 1:3
